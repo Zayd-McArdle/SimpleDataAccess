@@ -13,7 +13,7 @@ namespace SimpleDataAccess
     /// A wrapper class for making SQL calls in Dapper
     /// </summary>
     /// <typeparam name="TDbProvider">Database provider. For example, SQL Server, Oracle, MySQL, SQLite, etc.</typeparam>
-    public sealed class DataAccess<TDbProvider> : IDisposable
+    public sealed class DataAccess<TDbProvider> : IDataAccess, IDisposable  
         where TDbProvider : IDbConnection, new()
     {
         private readonly TDbProvider _connection;
